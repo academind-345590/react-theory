@@ -3,12 +3,12 @@ import './App.css';
 
 class App extends Component {
   render(){
+    const divStyle={
+      textAlign: 'center'
+    };
     return (
-      <div>
-        <div className="App">
-          <h1> Hello word !</h1>
-        </div>
-        <p>Something yet ...</p>
+      <div style={ divStyle }>
+        <h1 style={{ color: 'blue', fontSize: '20px' }}> Hello word !</h1>
       </div>
     );    
   }
