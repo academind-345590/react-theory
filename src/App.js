@@ -3,23 +3,14 @@ import './App.css';
 
 class App extends Component {
   render(){
-    // return (
-    //   <div className="App">
-    //     <h1> Hello word !</h1>
-    //   </div>
-    // );
-
-    return React.createElement(
-      'div',
-      {
-        className: 'App'
-      },
-      React.createElement(
-        'h1',
-        null,
-        'Hello world !!'
-      )
-    );
+    return (
+      <div>
+        <div className="App">
+          <h1> Hello word !</h1>
+        </div>
+        <p>Something yet ...</p>
+      </div>
+    );    
   }
 }
 
