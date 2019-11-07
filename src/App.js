@@ -12,6 +12,7 @@ class App extends Component {
         <h1> Hello word !</h1>
 
         <Car />
+        <Car />
       </div>
     );    
   }
