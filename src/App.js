@@ -11,8 +11,12 @@ class App extends Component {
       <div style={ divStyle }>
         <h1> Hello word !</h1>
 
-        <Car name={'Ford'} year={2005}/>
-        <Car name="Lada" year={2015}/>
+        <Car name={'Ford'} year={2005}>
+        <p style={{ color: 'green' }}>COLOR</p>
+        </Car>
+        <Car name="Lada" year={2015}>
+          <p style={{ color: 'red' }}>COLOR</p>
+        </Car>
         <Car name={'Volga'} year={1991}/>
       </div>
     );    
