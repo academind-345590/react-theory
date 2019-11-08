@@ -14,6 +14,12 @@ class App extends Component {
     showCars: false,
   }
 
+  deleteHandler(index){
+    const cars = this.state.cars.concat();
+    cars.splice(index,1);
+    this.setState({cars});
+  }
+
   onChaneName(name, index){
     const car = this.state.cars[index];
     car.name = name;
@@ -41,6 +47,7 @@ class App extends Component {
               key = {index}
               name = {car.name}
               year = {car.year}
+              onDelete = {this.deleteHandler.bind(this, index)}
               onChaneName = {(event) => this.onChaneName(event.target.value, index)}
             />
         )
