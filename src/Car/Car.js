@@ -1,9 +1,15 @@
 import React from 'react';
 
 export default props => (
-  <div>    
+  <div style={{
+    display: 'block',
+    padding: '10px',
+    border: '2px solid #ccc',
+    marginBottom: '10px'
+  }}>    
     <h3>Car name: { props.name }</h3>
     <p>Year: <strong>{ props.year }</strong></p>
-    <button onClick={props.onChaneTitle}>Click</button>
+    <input type="text" onChange={props.onChaneName} value={props.name} />
+    {/* <button onClick={props.onChaneTitle}>Click</button> */}
   </div>
 )

@@ -14,10 +14,12 @@ class App extends Component {
     showCars: false,
   }
 
-  changeTitleHandler=(pageTitle)=>{
-    this.setState({
-      pageTitle
-    });
+  onChaneName(name, index){
+    const car = this.state.cars[index];
+    car.name = name;
+    const cars = [...this.state.cars];
+    cars[index] = car;
+    this.setState({cars});
   }
 
   toggleCarsHandler=()=>{
@@ -39,7 +41,7 @@ class App extends Component {
               key = {index}
               name = {car.name}
               year = {car.year}
-              onChaneTitle = {this.changeTitleHandler.bind(this, car.name)}
+              onChaneName = {(event) => this.onChaneName(event.target.value, index)}
             />
         )
       }) 
