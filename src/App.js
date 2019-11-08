@@ -29,32 +29,28 @@ class App extends Component {
     const divStyle={
       textAlign: 'center'
     };
-    const cars = this.state.cars;
+
     return (
       <div style={ divStyle }>
-      <h1>{this.state.pageTitle}</h1>
-      <div>
-        <input type="text" onChange={this.handleInput} />
-      </div>
-      <button 
-        onClick={this.changeTitleHandler.bind(this, 'Changed!')}
-      >Change title</button>
+        <h1>{this.state.pageTitle}</h1>
+        <div>
+          <input type="text" onChange={this.handleInput} />
+        </div>
+        <button 
+          onClick={this.changeTitleHandler.bind(this, 'Changed!')}
+        >Change title</button>
 
-        <Car 
-          name={cars[0].name} 
-          year={cars[0].year} 
-          onChaneTitle = {this.changeTitleHandler.bind(this, cars[0].name)}
-        />
-        <Car 
-          name={cars[1].name} 
-          year={cars[1].year}
-          onChaneTitle = {()=> this.changeTitleHandler(cars[1].name)} 
-        />
-        <Car 
-          name={cars[2].name} 
-          year={cars[2].year} 
-          onChaneTitle = {()=> this.changeTitleHandler(cars[2].name)} 
-        />
+        { this.state.cars.map((car, index)=>{
+          return (
+            <Car 
+              key = {index}
+              name = {car.name}
+              year = {car.year}
+              onChaneTitle = {this.changeTitleHandler.bind(this, car.name)}
+            />
+          )
+        }) }
+        
       </div>
     );    
   }
