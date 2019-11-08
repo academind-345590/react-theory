@@ -3,21 +3,28 @@ import './App.css';
 import Car from './Car/Car';
 
 class App extends Component {
+
+  state = {
+    cars: [
+      {name: 'Ford', year: 2005 },
+      {name: 'Lada', year: 2015 },
+      {name: 'Mazda', year: 1991 },
+    ],
+    pageTitle: 'React components'
+  }
+
   render(){
     const divStyle={
       textAlign: 'center'
     };
+    const cars = this.state.cars;
     return (
       <div style={ divStyle }>
-        <h1> Hello word !</h1>
+      <h1>{this.state.pageTitle}</h1>
 
-        <Car name={'Ford'} year={2005}>
-        <p style={{ color: 'green' }}>COLOR</p>
-        </Car>
-        <Car name="Lada" year={2015}>
-          <p style={{ color: 'red' }}>COLOR</p>
-        </Car>
-        <Car name={'Volga'} year={1991}/>
+        <Car name={cars[0].name} year={cars[0].year} />
+        <Car name={cars[1].name} year={cars[1].year} />
+        <Car name={cars[2].name} year={cars[2].year} />
       </div>
     );    
   }
