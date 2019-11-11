@@ -6,7 +6,9 @@
   transition: border, box-shadow .3s;
 }
 
-.input {}
+.input {
+  background: white;
+}
 
 .input:active, .input:focus {
   outline: none;
