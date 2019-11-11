@@ -1,10 +1,9 @@
 import React from 'react';
 import Radium from 'radium';
-import './Car.css';
-import { cursor } from 'sisteransi';
+import classes from './Car.css';
 
 const Car = props => { 
-  const inputClasses = ['input'];
+  const inputClasses = [classes.input];
   const style = {
     border: '1px solid #ccc',
     boxShadow: '0 4px 5px 0 rgba(0,0,0,0, .14)',
@@ -16,17 +15,17 @@ const Car = props => {
   }
 
   if(props.name !== ''){
-    inputClasses.push('green');
+    inputClasses.push(classes.green);
   } else {
-    inputClasses.push('red');
+    inputClasses.push(classes.red);
   }
 
   if(props.name.length > 4){
-    inputClasses.push('bold');
+    inputClasses.push(classes.bold);
   }
 
   return (
-    <div className="Car" style={style}>    
+    <div className={classes.Car} style={style}>    
       <h3>Car name: { props.name }</h3>
       <p>Year: <strong>{ props.year }</strong></p>
       <input 
