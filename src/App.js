@@ -4,14 +4,17 @@ import Car from './Car/Car';
 
 class App extends Component {
 
-  state = {
-    cars: [
-      {name: 'Ford', year: 2005 },
-      {name: 'Lada', year: 2015 },
-      {name: 'Mazda', year: 1991 },
-    ],
-    pageTitle: 'React components',
-    showCars: false,
+  constructor(props){
+    super(props);
+    this.state = {
+      cars: [
+        {name: 'Ford', year: 2005 },
+        {name: 'Lada', year: 2015 },
+        {name: 'Mazda', year: 1991 },
+      ],
+      pageTitle: 'React components',
+      showCars: false,
+    }
   }
 
   deleteHandler(index){
