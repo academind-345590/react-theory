@@ -1,9 +1,24 @@
 import React from 'react';
-import Radium from 'radium';
+// import Radium from 'radium';
 import classes from './Car.css';
 
 class Car extends React.Component {
+  //life cicle updates
+  UNSAFE_componentWillReceiveProps(nextProps){
+    console.log('Car componentWillReceiveProps', nextProps);
+  }
+  shouldComponentUpdate(nextProps,nextState){
+    console.log('Car shouldComponentUpdate', nextProps, nextState);
+    return nextProps.name.trim() !== this.props.name.trim()
+  }
+  UNSAFE_componentWillUpdate(nextProps, nextState){
+    console.log('Car componentWillUpdate', nextProps, nextState);
+  }
+  componentDidUpdate(){
+    console.log('Car componentDidUpdate');
+  }
   render(){
+    console.log('Car render');
     const inputClasses = [classes.input];
     const style = {
       border: '1px solid #ccc',
@@ -41,4 +56,5 @@ class Car extends React.Component {
   }
 }
 
-export default Radium(Car)
+// export default Radium(Car)
+export default Car
