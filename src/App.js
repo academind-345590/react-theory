@@ -62,6 +62,7 @@ class App extends Component {
               <Car               
                 name = {car.name}
                 year = {car.year}
+                index = {index}
                 onDelete = {this.deleteHandler.bind(this, index)}
                 onChaneName = {(event) => this.onChaneName(event.target.value, index)}
               />
